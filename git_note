@@ -1,0 +1,16 @@
+git init
+git add .
+git commit -m "Initial Commit"
+git config --global user.email "shuyuandu530@gmail.com"
+git config --global user.name "shuyuand"
+
+git remote add origin  https://github.com/dsy20240609/cppProgramming.git
+git remote set-url origin git@github.com:dsy20240609/cppProgramming.git
+git push -u origin master
+
+## use ssh key to match local and remote command
+ssh-hkeygen -t ed25519 -C shuyuandu530@gmail.com
+ssh-add ~/.ssh/id_ed25519
+eval "$(ssh-agent -s)"
+ssh -T git@github.com
+
