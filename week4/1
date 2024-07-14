@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+using namespace std;
+class Complex {
+private:
+    double r,i;
+public:
+    void Print() {
+        cout << r << "+" << i << "i" << endl;
+    }
+    Complex& operator=(const char* s) {
+    if(s) {
+	char ch='+';
+	char i= 'i';
+        char * locPlus=strchr(s,ch);
+        char * locI= strchr(s,ch);
+	if(locPlus) {
+	   char * real[locPlus-s+1];
+	   std::strncpy(real,s,locPlus-s);
+	   real[locPlus-s]='\0';
+	}
+	if(locI) {
+	   char * virtual[locI-localPlus];
+	   std::strcpy(virtual,s+(loPlus+1),locI-localPlus-1);
+	   virtual[locI-localPlus]='\0';
+	}
+        r=std::stod(real);
+	i=std::stod(image);
+    }
+    
+    }
+// 在此处补充你的代码
+};
+int main() {
+    Complex a;
+    a = "3+4i"; a.Print();
+    a = "5+6i"; a.Print();
+    return 0;
+}
